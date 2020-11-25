@@ -22,4 +22,9 @@ if __name__ == '__main__':
             else:
                 print("success")
                 sendTransationWithMoreGas(tx_dic, "2")
+                with open("runninglog.csv","w",newline="") as datacsv:
+                    #dialect为打开csv文件的方式，默认是excel，delimiter="\t"参数指写入的时候的分隔
+                    csvwriter = csv.writer(datacsv,dialect = ("excel"))
+                    #csv文件插入一行数据，把下面列表中的每一项放入一个单元格（可以用循环插入多行）
+                    csvwriter.writerow(["success", time.strftime("%Y-%m-%d %H:%M:%S", timeArray)])
             time.sleep(20)
