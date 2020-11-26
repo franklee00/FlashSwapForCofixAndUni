@@ -22,5 +22,5 @@ if __name__ == '__main__':
                 sendTransationWithMoreGas(tx_dic, "2")
                 with open("runninglog.csv","w",newline="") as datacsv:
                     csvwriter = csv.writer(datacsv,dialect = ("excel"))
-                    csvwriter.writerow([time.strftime("%Y-%m-%d %H:%M:%S", timeArray), "unlucky"])
+                    csvwriter.writerow([time.strftime("%Y-%m-%d %H:%M:%S", timeArray), "success"])
             time.sleep(20)
