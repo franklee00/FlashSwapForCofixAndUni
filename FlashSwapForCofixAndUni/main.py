@@ -13,14 +13,14 @@ if __name__ == '__main__':
             try:
                 tx_dic_gas = w3.eth.estimateGas(tx_dic)
             except ValueError:
-                print("unlucky", time.strftime("%Y-%m-%d %H:%M:%S", timeArray))
+                print(time.strftime("%Y-%m-%d %H:%M:%S", timeArray), "unlucky")
                 with open("runninglog.csv","w",newline="") as datacsv:
                     csvwriter = csv.writer(datacsv,dialect = ("excel"))
-                    csvwriter.writerow(["unlucky", time.strftime("%Y-%m-%d %H:%M:%S", timeArray)])
+                    csvwriter.writerow([time.strftime("%Y-%m-%d %H:%M:%S", timeArray), "unlucky"])
             else:
                 print("success")
                 sendTransationWithMoreGas(tx_dic, "2")
                 with open("runninglog.csv","w",newline="") as datacsv:
                     csvwriter = csv.writer(datacsv,dialect = ("excel"))
-                    csvwriter.writerow(["success", time.strftime("%Y-%m-%d %H:%M:%S", timeArray)])
+                    csvwriter.writerow([time.strftime("%Y-%m-%d %H:%M:%S", timeArray), "unlucky"])
             time.sleep(20)
