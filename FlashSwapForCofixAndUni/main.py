@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 from swapContract import initiateFlashLoan
 from config import *
 import time
@@ -18,7 +21,7 @@ if __name__ == '__main__':
                     csvwriter = csv.writer(datacsv, dialect = ("excel"))
                     csvwriter.writerow([time.strftime("%Y-%m-%d %H:%M:%S", timeArray), "unlucky"])
             else:
-                print("success")
+                print(time.strftime("%Y-%m-%d %H:%M:%S", timeArray), "success")
                 sendTransationWithMoreGas(tx_dic, "2")
                 with open("runninglog.csv", "a", newline="") as datacsv:
                     csvwriter = csv.writer(datacsv, dialect = ("excel"))
